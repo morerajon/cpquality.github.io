@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concesionaria Premium Quality</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="inicio">
+    
+        <nav class="navbar navbar-expand-lg bg-black bg-gradient text-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand f-ocultar" href="#">
+                    <h3 class="text-body-emphasis">Premium Quality</h3>
+                </a>
+                <img class="icon f-ocultar" src="img/LOGO BLANCO.png" alt="autoicono">
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <img class="icon ocultar" src="img/LOGO BLANCO.png" alt="autoicono">
+                    <a class="navbar-brand ocultar" href="#">
+                        <h5 class="text-body-emphasis">Concesionaria</h5>
+                        <h3 class="text-body-emphasis">Premium Quality</h3>
+                    </a>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#seccion2">Coches</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#seccion3" aria-disabled="true">Ubicacion</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#seccion4" aria-disabled="true">Servicios</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#seccion5" aria-disabled="true">Contacto</a>
+                        </li>
+
+
+
+                    </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+    <div class="card">
+        
+        <div class="card-color" style="background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 70%), linear-gradient(-25deg, black 0%, black 20%, rgb(137, 2, 62) 20%, rgb(137, 2, 62) 21%, black 24%, black 26%, rgb(137, 2, 62) 26%, rgb(137, 2, 62) 100%);">
+           
+          
+            <div class="carousel-container">
+                <div class="carousel" style="transform: translateX(0%);"></div>
+                <button class="prev" onclick="showSlide(currentSlide - 1)">❮</button>
+                <button class="next" onclick="showSlide(currentSlide + 1)">❯</button>
+            </div>
+        </div>
+
+        <div class="thumbsnails">
+            <div class="thumbsnail1 box"></div>
+            <div class="thumbsnail2 box"></div>
+            <div class="thumbsnail3 box"></div>
+            <div class="thumbsnail4 box"></div>
+        </div>
+      
+    </div>
+
+    <div class="seccion3" id="seccion3">
+        <div class="maps">
+            <img src="img/mapas.jpg" alt="mapa">
+        </div>
+
+       
+        <div class="seccion3-b">
+            <h2>¿Como LLegar?</h2>
+            <div class="mapInfo">
+                <img src="img/ubicacion.png" alt="ubicacion">
+                <h3>Consecionaria Premium Quality</h3>
+                <h4>Av.Presidente Peron 344, CABA</h4>
+            </div>
+        </div>
+
+    </div> 
+
+    <div class="seccion2" id="seccion2"> 
+        <div class="containerCardCar">
+            <h2>Elegi el tuyo:</h2>
+            <div class="mark-items">
+                <div class="box-mark-item">
+                    <button data-name="Volkswagen"><img src="img/logo-mitsubishi.png" alt="Mitsubishi"></button>
+                </div>
+                <div class="box-mark-item">
+                    <button data-name="Renault"><img src="img/logo-Renault.png" alt="Renault"></button>
+                </div>
+                <div class="box-mark-item">
+                    <button data-name="Chevrolet"><img src="img/logo-chevrolet.png" alt="Chevrolet"></button>
+                </div>
+                <div class="box-mark-item">
+                    <button data-name="Fiat"><img src="img/logoFiat.png" alt="Fiat"></button>
+                </div>
+                <div class="box-mark-item">
+                    <button data-name="Peugeot"><img src="img/logopeugeot.png" alt="Peugeot"></button>
+                </div>
+                <div class="box-mark-item">
+                    <button data-name="All" class="Active" >Mostrar Todos</button>
+                </div>
+            </div>
+            
+            
+            <div class="sliderFiltros">
+                <div class="slider">
+            
+                    
+                    <button id="next2">></button>
+                    <button id="prev2"><</button>
+                </div>
+                <div class="box3">
+                    <h1>Filtrar Vehículos</h1>
+                    <form id="filterForm">
+                        <!-- Filtro por Marca -->
+                        <div class="form-group">
+                            <label for="marca">Marca:</label>
+                            <select id="marca" name="marca">
+                                <option value="">Seleccione...</option>
+                                <option value="Toyota">Toyota</option>
+                                <option value="Honda">Honda</option>
+                                <option value="Ford">Ford</option>
+                                <option value="Chevrolet">Chevrolet</option>
+                                <option value="Bmw">BMW</option>
+                            </select>
+                        </div>
+
+                       
+                        <!-- Filtro por Estado -->
+                        <div class="form-group">
+                            <label for="estado">Estado:</label>
+                            <select id="estado" name="estado">
+                                <option value="">Seleccione...</option>
+                                <option value="0km">0km</option>
+                                <option value="Usado">Usado</option>
+                            </select>
+                        </div>
+                        <!-- Filtro por Precio -->
+                        <div class="form-group">
+                            <label for="precio">Precio:</label>
+                            <select id="precio" name="precio">
+                                <option value="">Seleccione...</option>
+                                <option value="10000millones">10000 millones</option>
+                                <option value="20000millones">20000 millones</option>
+                    
+                            </select>
+                        </div>
+                        <!-- Filtro por Color -->
+                        <div class="form-group">
+                            <label for="color">Color:</label>
+                            <select id="color" name="color">
+                                <option value="">Seleccione...</option>
+                                <option value="Rojo">Rojo</option>
+                                <option value="Blanco">Blanco</option>
+                                <option value="Negro">Negro</option>
+                                <option value="Azul">Azul</option>
+                                <option value="Gris">Gris</option>
+                                <option value="Verde">Verde</option>
+                            </select>
+                        </div>
+                        
+                        
+                        <div class="form-group-inline">
+                            <div class="form-group">
+                                <label for="year-from">Año Desde:</label>
+                                <select id="year-from" name="year-from">
+                                    <option value="">Seleccione...</option>
+                                    <!-- Opciones de año se generarán con JavaScript o de forma manual -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="year-to">Año Hasta:</label>
+                                <select id="year-to" name="year-to">
+                                    <option value="">Seleccione...</option>
+                                    <!-- Opciones de año se generarán con JavaScript o de forma manual -->
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-dark">Aplicar Filtros</button>
+                    </form>
+                </div>
+            </div>
+           
+        </div>
+    </div>  
+    <div class="seccion4" id="seccion4">
+         <h2>Nuestros Servicios:</h2>
+        <div class="container-flip-cards">
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  
+                    <div class="flip-card-front">
+                        <a href="https://www.volvotrucks.com.ar/es-ar/services/vehicle-service/service.html" target="_blank"></a>
+                        <img src="img/T2019_0159.jpg" alt="Imagen Frontal" class="front-image">
+                        <div class="capa">
+                            <h3 class="title">Tienda de refacciones</h3> 
+                            <h5>Leer Mas</h5>
+                         </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Todo lo que tu auto necesita, en un solo lugar. </p>
+                        <a href="https://www.volvotrucks.com.ar/es-ar/services/vehicle-service/service.html"  class="button-link">Info +</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img\T2012_1558.jpg" alt="taller2">
+                                <div class="capa">
+                                    <h3 class="title">Soporte de seguros</h3>
+                                    <h5>Leer Mas</h5>
+
+                                </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Tu tranquilidad es nuestra prioridad; ofrecemos soluciones rápidas y confiables para proteger lo que más valoras</p>
+                        <a href="https://www.volvotrucks.com.ar/es-ar/services/optimized-business/fleet-management.html"  class="button-link">Info +</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/T2019_0157.jpg" alt="t2019">
+                                  <div class="capa">
+                                      <h3 class="title">Herramientas Especiales</h3>
+                                      <h5>Leer Mas</h5>
+                                  </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Equipa tu taller con las mejores herramientas especiales: precisión, durabilidad y calidad garantizadas para cada proyecto.</p>
+                        <a href="https://www.volvotrucks.com.ar/es-ar/services/optimized-business/fleet-management.html"  class="button-link">Info +</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/T2019_0161.jpg" alt="controles">
+                        <div class="capa">
+                           <h3 class="title">Controles Exclusivos</h3>
+                            <h5>Leer Mas</h5>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Domina cada detalle con nuestros controles exclusivos: tecnología avanzada y precisión que marcan la diferencia.</p>
+                        <a href="https://www.volvotrucks.com.ar/es-ar/services/optimized-business/fleet-management.html" class="button-link">Info +</a>
+                    </div>
+                </div>
+            </div>
+        
+         </div>
+    </div>
+   <div class="seccion5">
+    <div class="contact">
+        <form id="contactForm">
+            <h2>Formulario de Contacto</h2>
+            
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono">
+            
+            <label for="auto">Selecciona un auto:</label>
+            <select id="auto" name="auto" required>
+              <option value="">--Selecciona un auto--</option>
+              <option value="toyota_corolla">Toyota Corolla</option>
+              <option value="honda_civic">Honda Civic</option>
+              <option value="ford_focus">Ford Focus</option>
+              <option value="chevrolet_cruze">Chevrolet Cruze</option>
+              <option value="nissan_altima">Nissan Altima</option>
+            </select>
+            
+            <button type="submit">Enviar</button>
+          </form>
+    </div>
+    
+      <img src="/img/formulario.avif" alt="form" >
+   </div>     
+        
+    </div>
+    <footer class="text-white text-center text-lg-start" style="background: linear-gradient(135deg, #7B1E3A 0%, #4C0F23 50%, #2B0B16 100%);">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0 d-flex align-items-center">
+                    <img src="img/LOGO BLANCO.png" id="footer-img" alt="Logo" class="img-fluid" style="max-width: 150px; margin-right: 20px;">
+                    <div>
+                        <h5 class="text-uppercase">Premium Quality</h5>
+                        <p>
+                            Proyecto para la carrera de Analisis de sistema,
+                            Materia: EDI 2,
+                            Profesor:Ezequiel Pacifico,
+                            
+                        </p>
+                    </div>
+                </div>
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Programadores:</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="#!" class="text-white">Ceballos Dario</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">Morera,Jonathan</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">Rios Fernando</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+                
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+    
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(255, 255, 255, 0.1);">
+            © 2024:
+            <a class="text-white" href="https://mdbootstrap.com/">Consecionaria :Premium Quality</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    
+    <a href="#" id="back-to-top" class="back-to-top">↑</a>
+    <script src="script.js"></script>
+    
+   
+</body>
+</html>

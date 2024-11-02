@@ -1,0 +1,934 @@
+/* Reiniciar márgenes y bordes */
+* {
+  margin: 0;
+  padding: 0;
+  
+}
+
+/* Asegurar que el body ocupe toda la pantalla */
+html, body {
+  height: 100%;
+ 
+}
+
+.inicio {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Asegura que el contenido ocupe toda la pantalla */
+}
+
+.section1 {
+  /* Agrega estilos aquí solo para la primera sección */
+  display: flex;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  border: none;
+}
+
+/* Estilos específicos para .section2 */
+.section2 {
+  border: none;
+  display: flex;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  
+  /* Asegúrate de que las estructuras dentro de .section2 tengan flex o grid según lo requieras */
+}
+/* Navbar con altura fija */
+.navbar {
+  height: 10vh; /* El navbar ocupará el 10% de la pantalla */
+  background-color: black;
+  color: white;
+}
+
+.navbar-toggler-icon {
+  background-image: url("/img/icons8-menú-48.png");
+  background-size: contain; /* Asegura que la imagen se ajuste bien */
+  background-repeat: no-repeat;
+  width: 30px; /* Ajustar el ancho de la imagen */
+  height: 30px; /* Ajustar la altura de la imagen */
+}
+
+.navbar-toggler {
+  border: none; /* Elimina el borde del botón */
+  padding: 0;   /* Elimina el padding extra */
+}
+
+button.navbar-toggler:focus {
+  outline: none; /* Elimina el contorno al hacer clic */
+}
+
+
+/* Mantener los estilos del navbar */
+.navbar-brand h5, .navbar-brand h3, .nav-link, .navbar-toggler-icon, .form-control::placeholder, .btn-outline-success {
+  color: rgba(250, 250, 250, 0.856) !important; /* Letra color blanco */
+}
+
+.navbar-brand h5, .navbar-brand h3 {
+  margin-bottom: 0;
+  margin-top: 0;
+  line-height: 1;
+  font-size: 15px;
+  margin-right: 3%;
+}
+.f-ocultar{
+  display: none;
+}
+.icon {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+h3, .card-color {
+  font-family: "Permanent Marker", cursive;
+  color: white;
+  border: none;
+}
+
+h5 {
+  font-size: 0.8em;
+  border: NONE;
+}
+
+.card{
+  flex-grow: 1; /* La card ocupará todo el espacio restante */
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar verticalmente el contenido */
+  justify-content:space-around; /* Centrar horizontalmente el contenido */
+  color: white; /* Color del texto en la card */
+  position: relative;
+  width: 100vw; /* Asegura que ocupe todo el ancho del viewport */
+  height: 50vh; /* Asegura que ocupe todo el alto del viewport */
+  border: none;
+}
+
+.card-color {
+  display: flex;
+  color: white; /* Asegura que el texto dentro de .card-color sea blanco */
+  font-size: 24px; /* Ajuste del tamaño de fuente para que sea visible */
+  background:  
+  radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 70%), /* Degradado invertido */
+  linear-gradient(
+    -25deg,
+    black 0%,
+    black 20%,
+    #89023E 20%,
+    #89023E 21%,
+    black 24%,
+    black 26%,
+    #89023E 26%,
+    #89023E 100%
+  );
+  height: 60vh; /* Usa vh para ajustar la altura al 75% del viewport */
+  min-height: 300px;
+  width: 90vw; /* Usa vw para ajustar el ancho al 80% del viewport */
+  border-radius: 20px;
+  text-align: center;
+  font-size: 2em;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1; /* Asegura que el contenido esté visible sobre el fondo */
+  transition: background 0.5s ease-in-out;
+  margin-top: 3vw;
+  margin-bottom: 1.5vw;
+}
+
+/* General */
+.carousel-container {
+  position: relative;
+  width: 90%;
+  max-width: 1400px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between; /* Asegura que los elementos dentro se distribuyan a lo largo del espacio */
+  align-items: center;
+  width: 90%;
+}
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Flex wrap para dispositivos móviles */
+}
+
+.text-content {
+  margin-right: 8vw; /* Espacio entre el texto y la imagen */
+  text-align: right;
+}
+
+.text-content h3 {
+  font-size: 1.5em;
+}
+
+.text-content h4 {
+  font-family: 'Lucida Sans';
+}
+
+.carousel-slide img {
+  width: 42vw; /* Ajusta el tamaño de la imagen */
+  height: auto;
+  margin-left: 5vw;
+  min-width: 42vw;
+}
+
+/* Posicionamiento de los botones de navegación */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1; /* Para asegurarte de que los botones estén sobre el contenido */
+}
+
+.prev {
+  width:5vw;
+  height:5vw;
+  left: 5px; /* Posiciona la flecha a la izquierda */
+}
+
+.next {
+  right: 8px; /* Posiciona la flecha a la derecha */
+  width:5vw;
+  height:5vw;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Ajustes para pantallas pequeñas */
+
+.thumbsnails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; /* Espacio uniforme entre los thumbnails */
+  align-items: center;
+  width: 100%; /* Ancho ajustable para los thumbnails */
+  height: auto; /* Permite que la altura se ajuste según el contenido */
+  padding-left: 20vw;
+  padding-right: 20vw;
+  border: none;
+}
+
+.box {
+  border-radius: 20px;
+  background-color: #ccc; /* Color de fondo si la imagen no se carga */
+  width: 7vw; /* Ancho proporcional */
+  height: 7vw; /* Altura proporcional para mantener la forma cuadrada */
+  min-width: 70px;
+  min-height: 70px;
+  overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
+  position: relative; /* Necesario para la posición absoluta de la imagen */
+  margin: 0 5px; /* Espaciado entre los thumbnails */
+}
+
+.box img {
+  position: absolute; /* Permite centrar la imagen */
+  top: 50%; /* Ajusta verticalmente */
+  left: 50%; /* Ajusta horizontalmente */
+  width: 100%; /* Ajusta el ancho de la imagen */
+  height: 100%; /* Ajusta la altura de la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra el contenedor */
+  transform: translate(-50%, -50%); /* Centra la imagen en el contenedor */
+}
+
+.box2{
+    position: relative;
+    top: 0;
+    left:0;
+    width: 10vw;
+    height: 10vw;
+    object-fit: cover;
+
+}
+
+.container2{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: linear-gradient(100deg, rgb(236,213,232)0% ,rgb(50, 112, 118) 100% );
+    border: none;
+}
+
+.gallery{
+  width: 100%;
+  border: none;
+}
+
+.gallery-container{
+  align-items: center;
+  display: flex;
+  height: 400px;
+  margin:0 auto;
+  max-width:1000px;
+  position: relative;
+  border: none;
+}
+
+.gallery-item{
+  height:200px;
+  opacity: 0;
+  position:absolute;
+  transition: all 0.3s ease-in-out;
+  width: 330px;
+  z-index: 0;
+  border-radius: 15px;
+  background-size: contain;
+}
+
+.gallery-item-1{
+  left: 15%;
+  opacity: .4;
+  transform: translateX(-50%);
+}
+
+.gallery-item-2, .gallery-item-4{
+  height:250px ;
+  opacity: .8;
+  width: 380px;
+  z-index: 1;
+}
+
+.gallery-item-2{
+   left:30% ;
+   transform: translate(-50%) ;
+}
+ 
+.gallery-item-4{
+  left: 70%;
+  transform: translateX(-50%);
+}
+
+.gallery-item-5{
+  left: 85%;
+  opacity: .4;
+  transform: translateX(-50%);
+}
+.gallery-controls{
+  display: flex;
+  justify-content: center;
+  margin: 25px 0;
+  height: 100px;
+}
+.gallery-controls button{
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 30px;
+  margin: 0 50px;
+  padding: 0 12px;
+  text-transform: capitalize;
+}
+
+.gallery-controls-button:focus{
+ outline: none;
+
+}
+.gallery-controls-previus::before{
+  border: solid #000;
+  border-width: 0 5px 5px 0;
+  content:' ';
+  display:inline-block ;
+  height: 5px;
+  left: -30px;
+  padding: 10px;
+  position: absolute;
+  top: 25%;
+  transform: rotate(135deg) translateY(-50%);
+  transition: left 0.15s ease-in-out;
+  width: 5px;
+}
+
+.gallery-controls-previus:hover::before{
+  left:-40px;
+}
+
+.gallery-controls-next{
+  position: relative;
+}
+
+.gallery-control-next::before{
+  border: solid #000;
+  border-width: 0 5px 5px 0;
+  content:'' ;
+  display:inline-block ;
+  height: 5px;
+  padding: 10px;
+  position: absolute;
+  right: -30px;
+  top:45 ;
+  transform: rotate(-45deg) translateY(-50%);
+  transition: right .15s ease-in-out ;
+  width: 5px;
+}
+
+.gallery_controls-next:hover::before{
+  right:-40px;
+}
+
+.gallery-nav{
+  bottom: -15px;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.gallery nav li{
+  background: #ccc;
+  border-radius:50%;
+  height: 10px;
+  margin: 0 16px;
+  width: 10px;
+}
+
+.gallery-nav li.gallery-item-selected{
+  background: #555;
+}
+.containerCardCar {
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+.containerCardCar h2 ,.item h1{
+  text-align: center;
+  font-family: "Permanent Marker", cursive;
+}
+
+.mark-items {
+  height: 15vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: none;
+}
+
+.box-mark-item {
+  height: 15vh;
+  width: 15vh;
+ display: flex;
+  border-radius: 10px;
+  min-width: 60px;
+  min-height: 60px;
+  padding: 2vh;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  position: relative;
+}
+.box-mark-item button {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  border-radius: 20px;
+}
+
+
+.box-mark-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain; /* Asegura que la imagen se ajuste dentro del botón sin recortarse */
+  border-radius: 20px;
+}
+.box-mark-item button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+  opacity: 0; /* Empieza transparente */
+  transition: opacity 0.3s ease; /* Transición de opacidad */
+}
+
+.box-mark-item button:hover::before {
+  opacity: 1; /* Aparece el degradado al hacer hover */
+}
+
+.box-mark-item button:hover img {
+  transform: scale(1.05); /* Efecto de escala para la imagen al hacer hover */
+}
+
+.sliderFiltros{
+  height: 70vh;
+  overflow: hidden;
+}
+
+.slider {
+  position: relative;
+  width: 85vw;
+  height: 83vh;
+  margin-top: 2vw;
+  overflow: hidden;
+  padding-top: 1vw;
+  align-items: center;
+  z-index: 1;
+  flex: 3;
+  
+}
+.slider .item {
+  position: absolute;
+  width: 20vw;
+  height: 25vw;
+  text-align: justify;
+  background: linear-gradient(135deg, #7B1E3A 0%, #4C0F23 50%, #2B0B16 100%);
+  color: white;
+  font-size: 1em;
+  border-radius: 10px;
+  transition: 0.5s;
+  left: 25vw;
+  top: 0;
+  margin-top: 1vw;
+}
+.hide{
+  display: none;
+}
+.item h1{
+  font-size: 1.5em;
+}
+
+.item h2{
+  font-size: 1em;
+}
+.slider .item img{
+  width: 20vw;
+  height: 15vw;
+}
+.filterForm{
+  display: flex;
+  flex-direction: row;
+}
+.containerCardCar #next2, #prev2 {
+  position: absolute;
+  top: 40%;
+  color: black;
+  background-color: transparent;
+  border: none;
+  font-size: 3rem;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.containerCardCar #prev2 {
+  left: 30px;
+  width: 1em;
+  height: 1em;
+}
+
+.containerCardCar #next2 {
+  right: 30px;
+  width: 1em;
+  height: 1em;
+}
+.containerCardCar .sliderFiltros {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Alinea los elementos en la parte superior */
+  gap: 20px; /* Espacio entre .slider y .box3 */
+
+}
+.box3 {
+  flex: 1; /* Toma menos espacio comparado con .slider */
+  max-width: 300px; /* Mantiene el tamaño máximo de .box3 */
+  width: 100%;
+  margin-right: 4vw;
+  
+
+}
+h1 {
+  font-size: 24px;
+  text-align: center;
+  color: #333333;
+}
+.form-group {
+  margin-bottom: 5px;
+}
+
+label {
+  font-size: 16px;
+  color: #333333;
+}
+.form-group-inline {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px; /* Espacio entre ambos selectores */
+}
+
+/* Ajusta el ancho de cada selector dentro de .form-group-inline */
+.form-group-inline .form-group {
+  flex: 1; /* Ocupa el mismo ancho cada selector */
+}
+
+.form-group-inline label,
+.form-group-inline select {
+  width: 100%;
+  display: block;
+  margin-bottom: 5px;
+}
+.containerCardCar select, button {
+  width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    margin-top: 5px;
+}
+
+.containerCardCar button{
+  
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.seccion3 {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+ justify-content: center;
+ align-items: center;
+ display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+ padding: 5vw;
+ position: relative;
+
+}
+
+.maps{
+  width: 50vw;
+  height: 80vh;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.maps img{
+  width: 50vw;
+  height: 80vh;
+  object-fit: cover;
+
+}
+
+.seccion3-b{
+  width: 30vw;
+  height: 30vh;
+  min-height: 100vh;
+ justify-content: center;
+ align-items: center;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-around;
+ padding: 5vw;
+ position: relative;
+}
+.seccion3-b h2 ,.seccion4 h2{
+  text-align: center;
+  font-family: "Permanent Marker", cursive;
+}
+
+
+.mapInfo{
+  width: 30vw;
+  height: 30vw;
+  background: linear-gradient(135deg, #7B1E3A 0%, #4C0F23 50%, #2B0B16 100%);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #ccc;
+}
+.mapInfo img{
+  width: 7vw;
+  height: 7vw;
+}
+.container-flip-cards{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; /* Espacio equitativo entre las tarjetas */
+  align-items: center;
+  height: 90vh;
+  width: 100vw;
+  overflow: hidden;
+  
+  
+}
+.flip-card {
+  background-color: transparent;
+  width: 22vw;
+  height: 60vh;
+  perspective: 1000px;
+  font-family: sans-serif;
+  padding: 10px 0;
+}
+.flip-card img{
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+  background-color: transparent;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  box-shadow: 0 8px 16px rgba(128, 0, 32, 0.5);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 5px solid rgb(134, 0, 34);
+  border-radius: 1rem;
+}
+
+.flip-card-front {
+  background-color: transparent;
+  color:black;
+}
+
+.flip-card-back {
+  background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 70%), linear-gradient(-25deg, black 0%, black 20%, rgb(137, 2, 62) 20%, rgb(137, 2, 62) 21%, black 24%, black 26%, rgb(137, 2, 62) 26%, rgb(137, 2, 62) 100%);
+  color: white;
+  transform: rotateY(180deg);
+  justify-content: center;
+  align-items: center;
+}
+
+.front-image {
+  width: 100%;
+  height: 100%;
+  background-size:contain;
+  overflow: hidden;
+  border-radius: 10px;
+  z-index: -1;   
+  
+}
+.button-link{
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
+  width: 5vw;
+  color: white;
+  border: 2px solid white;
+  margin-top: 5vh;
+  
+}
+
+.seccion4{
+  width: 100vw;
+  height: 100vh;
+
+}
+
+.seccion5{
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 5vw;
+
+}
+
+.seccion5 form{
+
+  display: flex;
+  flex-direction: column;
+ 
+}
+.contact{
+  background-color: linear-gradient(135deg, #7B1E3A 0%, #4C0F23 50%, #2B0B16 100%);
+  width:40vw;
+  height: 40vh;
+}
+.seccion5 img{
+
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+.seccion5 img:hover {
+    transform: scale(1.05); /* Aumenta el tamaño de la imagen al pasar el mouse */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra más intensa al pasar el mouse */
+}
+
+#footer-img{
+  width: 8vw;
+  height: 8vw;
+
+}
+.back-to-top {
+  position: fixed;
+  bottom: 20px; /* Ajusta la posición vertical */
+  right: 20px; /* Ajusta la posición horizontal */
+  background-color: #7B1E3A; /* Color burdeos */
+  color: white; /* Color del texto */
+  border: none;
+  border-radius: 50%; /* Hace el botón redondo */
+  width: 50px; /* Tamaño del botón */
+  height: 50px; /* Tamaño del botón */
+  text-align: center;
+  line-height: 50px; /* Centra el texto verticalmente */
+  font-size: 24px; /* Tamaño del texto */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+}
+
+.back-to-top:hover {
+  background-color: #4C0F23; /* Color al pasar el mouse */
+  transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
+}
+
+.back-to-top:active {
+  transform: scale(0.95); /* Efecto de pulsar */
+}
+
+.card2{
+  margin: 5vw;
+}
+
+.cardinfo{
+  width: 90vw;
+  height: 50vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+.cardinfo-auto{
+  width: 22vw;
+  height: 50vh;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #e5e4e2, #cfcfcf);
+  margin-bottom: 5vw;
+}
+/* Media query para pantallas pequeñas (celulares) */
+@media (max-width: 768px) {
+  .navbar {
+    height: 12vh; /* Ajusta la altura para móviles */
+  }
+
+  .card {
+    height: 60vh; /* Reduce la altura */
+    width: 90vw; /* Ajusta el ancho */
+    font-size: 1em; /* Ajusta el tamaño de la fuente */
+  }
+
+  .card-color {
+    height: 50vh;
+    width: 95vw;
+    font-size: 1.5em; /* Reduce el tamaño de la fuente */
+  }
+
+  .carousel-slide img {
+    width: 80vw; /* Haz que la imagen ocupe más espacio */
+  }
+
+  .text-content {
+    margin-right: 2vw; /* Reduce el margen */
+    text-align: center; /* Centra el texto */
+  }
+
+  .thumbsnails {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .box {
+    width: 15vw; /* Aumenta el tamaño relativo */
+    height: 15vw;
+    min-width: 50px;
+    min-height: 50px;
+  }
+
+  .containerCardCar #next2, #prev2 {
+    font-size: 2rem; /* Reduce el tamaño de los botones */
+  }
+
+  .slider {
+    width: 95vw; /* Aumenta el ancho */
+    height: 65vh; /* Reduce la altura */
+  }
+
+  .item {
+    width: 90vw; /* Aumenta el ancho */
+    height: 50vh; /* Ajusta la altura */
+  }
+
+  .maps {
+    width: 90vw;
+    height: 60vh;
+  }
+
+  .mark-items {
+    flex-direction: column; /* Apila los elementos */
+    align-items: center;
+    height: auto;
+  }
+
+  .box-mark-item {
+    width: 50vw;
+    height: 50vw;
+  }
+
+  .form-group-inline {
+    flex-direction: column; /* Cambia la dirección a columna */
+  }
+}
